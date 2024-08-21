@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var appState: AppState
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Click")
+                .font(.title.bold())
+                .padding()
+            if appState.permissionsGranted {
+                Text("Permissions granted")
+            } else {
+                Text("Permissions not granted")
+            }
         }
         .padding()
+        .frame(width: 330)
     }
 }
 

@@ -11,6 +11,8 @@
 		10FA0F252C7627D90056919B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FA0F242C7627D90056919B /* ContentView.swift */; };
 		10FA0F272C7627DA0056919B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10FA0F262C7627DA0056919B /* Assets.xcassets */; };
 		10FA0F2A2C7627DA0056919B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10FA0F292C7627DA0056919B /* Preview Assets.xcassets */; };
+		10FA0F322C762CD50056919B /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FA0F312C762CD50056919B /* PermissionsView.swift */; };
+		10FA0F362C76414F0056919B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FA0F352C76414F0056919B /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		10FA0F262C7627DA0056919B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10FA0F292C7627DA0056919B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		10FA0F2B2C7627DA0056919B /* click.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = click.entitlements; sourceTree = "<group>"; };
+		10FA0F312C762CD50056919B /* PermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
+		10FA0F352C76414F0056919B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				10FA0F262C7627DA0056919B /* Assets.xcassets */,
 				10FA0F2B2C7627DA0056919B /* click.entitlements */,
 				10FA0F282C7627DA0056919B /* Preview Content */,
+				10FA0F312C762CD50056919B /* PermissionsView.swift */,
+				10FA0F352C76414F0056919B /* AppState.swift */,
 			);
 			path = click;
 			sourceTree = "<group>";
@@ -140,7 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				10FA0F252C7627D90056919B /* ContentView.swift in Sources */,
+				10FA0F322C762CD50056919B /* PermissionsView.swift in Sources */,
 				10FA0F232C7627D90056919B /* ClickApp.swift in Sources */,
+				10FA0F362C76414F0056919B /* AppState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
