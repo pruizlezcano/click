@@ -1,0 +1,16 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: check-added-large-files
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/nicklockwood/SwiftFormat
+    rev: 0.54.2
+    hooks:
+      - id: swiftformat
+  - repo: https://github.com/realm/SwiftLint
+    rev: 0.55.1
+    hooks:
+      - id: swiftlint
