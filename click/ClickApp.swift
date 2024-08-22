@@ -24,6 +24,8 @@ struct ClickApp: App {
 class AppDelegate: NSObject, NSApplicationDelegate {
     private var permissionsWindow: NSWindow?
     private var timer: Timer?
+    private var eventMonitor: Any?
+    private var activeKeys: Set<UInt16> = []  // Set to track currently pressed keys
 
     func applicationDidFinishLaunching(_: Notification) {
         print("Starting...")
@@ -34,6 +36,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             startPermissionCheckTimer()
         } else {
             AppState.shared.permissionsGranted = true
+            // Global monitor
+            eventMonitor = NSEvent.addGlobalMonitorForEvents(
+                matching: [.keyDown, .keyUp, .flagsChanged],
+                handler: { event in
+                    self.handleEvent(event: event)
+                }
+            )
+            
+            // Local motinor (when the app is focused)
+            eventMonitor = NSEvent.addLocalMonitorForEvents(
+                matching: [.keyDown, .keyUp, .flagsChanged],
+                handler: { event -> NSEvent? in
+                    self.handleEvent(event: event)
+                    return nil // Prevents the 'beep' sound by macOS
+                }
+            )
         }
     }
 
@@ -86,6 +104,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             timer?.invalidate()
             permissionsWindow?.close()
         }
+    }
+    private func handleEvent(event: NSEvent) {
+            switch event.type {
+            case .keyDown:
+                if !self.activeKeys.contains(event.keyCode) {
+                    self.activeKeys.insert(event.keyCode)
+                    print("Key pressed: \(event.keyCode)")
+                }
+            case .flagsChanged:
+                print("Key pressed: \(event.keyCode)")
+                guard event.modifierFlags.rawValue != 256 || event.keyCode == 57 else { return } // Key released (not caps lock)
+            case .keyUp:
+                self.activeKeys.remove(event.keyCode)
+            default:
+                break
+            }
     }
 }
 

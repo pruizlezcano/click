@@ -1,0 +1,15 @@
+{
+  "originHash" : "1ec3efa3650d01a353610105de1587023380243a32b2e2bb6adef416323547c5",
+  "pins" : [
+    {
+      "identity" : "oggdecoder",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/arkasas/OggDecoder",
+      "state" : {
+        "branch" : "main",
+        "revision" : "65e1465e593d2b0be6ac12256f2866a18d26e211"
+      }
+    }
+  ],
+  "version" : 3
+}
