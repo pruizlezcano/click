@@ -21,6 +21,7 @@ struct ClickApp: App {
         }
         .environmentObject(appState)
         .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
     }
 }
 
@@ -35,6 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_: Notification) {
         print("Starting...")
+        AppState.shared.appDelegate = self
 
         if !checkPermissions() {
             AppState.shared.permissionsGranted = false
@@ -117,7 +119,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    private func loadSoundPack(_ soundPack: Soundpack) {
+    func loadSoundPack(_ soundPack: Soundpack) {
         print("Loading sound: \(soundPack.rawValue).ogg")
 
         guard let soundURL = Bundle.main.url(forResource: soundPack.rawValue, withExtension: "ogg") else {
