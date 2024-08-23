@@ -6,6 +6,7 @@
 //
 
 import AVFoundation
+import Defaults
 import OggDecoder
 import SwiftUI
 
@@ -46,7 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func start() {
         AppState.shared.permissionsGranted = true
-        loadSoundPack(Soundpack.egCrystalPurple)
+        loadSoundPack(Defaults[.soundpack])
         // Global monitor
         eventMonitor = NSEvent.addGlobalMonitorForEvents(
             matching: [.keyDown, .keyUp, .flagsChanged],
@@ -135,7 +136,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     // Assign the sound pack and initialize the audio player array for each keyCode
                     AppState.shared.soundpack = soundPack
                     audioPlayers = [AVAudioPlayer]()
-
+                    Defaults[.soundpack] = soundPack
                     print("Sound loaded successfully")
                 } catch {
                     print("Failed to load sound: \(error.localizedDescription)")

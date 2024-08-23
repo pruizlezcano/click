@@ -5,6 +5,7 @@
 //  Created by Pablo Ruiz on 21/8/24.
 //
 
+import Defaults
 import Foundation
 
 struct SoundpackObject: Decodable {
@@ -21,8 +22,9 @@ struct SoundpackObject: Decodable {
     }
 }
 
-enum Soundpack: String {
+enum Soundpack: String, CaseIterable, Defaults.Serializable {
     case egCrystalPurple = "eg-crysyal-purple"
+    case egOreo = "eg-oreo"
 
     var soundpack: SoundpackObject? {
         loadJSON(rawValue)

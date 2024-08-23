@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		10E356492C77D29100F15BA5 /* OggDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = 10E356482C77D29100F15BA5 /* OggDecoder */; };
+		10E3564C2C789A3000F15BA5 /* eg-oreo.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 10E3564B2C789A3000F15BA5 /* eg-oreo.ogg */; };
+		10E3564E2C789A5F00F15BA5 /* eg-oreo.json in Resources */ = {isa = PBXBuildFile; fileRef = 10E3564D2C789A5F00F15BA5 /* eg-oreo.json */; };
+		10E356512C789DC000F15BA5 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 10E356502C789DC000F15BA5 /* Defaults */; };
+		10E356542C789E0800F15BA5 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E356532C789E0800F15BA5 /* Defaults.swift */; };
 		10FA0F232C7627D90056919B /* ClickApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FA0F222C7627D90056919B /* ClickApp.swift */; };
 		10FA0F252C7627D90056919B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FA0F242C7627D90056919B /* ContentView.swift */; };
 		10FA0F272C7627DA0056919B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10FA0F262C7627DA0056919B /* Assets.xcassets */; };
@@ -20,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10E3564B2C789A3000F15BA5 /* eg-oreo.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "eg-oreo.ogg"; sourceTree = "<group>"; };
+		10E3564D2C789A5F00F15BA5 /* eg-oreo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "eg-oreo.json"; sourceTree = "<group>"; };
+		10E356532C789E0800F15BA5 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		10FA0F1F2C7627D90056919B /* click.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = click.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10FA0F222C7627D90056919B /* ClickApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickApp.swift; sourceTree = "<group>"; };
 		10FA0F242C7627D90056919B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10E356512C789DC000F15BA5 /* Defaults in Frameworks */,
 				10E356492C77D29100F15BA5 /* OggDecoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +53,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10E3564A2C789A2600F15BA5 /* eg-oreo */ = {
+			isa = PBXGroup;
+			children = (
+				10E3564D2C789A5F00F15BA5 /* eg-oreo.json */,
+				10E3564B2C789A3000F15BA5 /* eg-oreo.ogg */,
+			);
+			path = "eg-oreo";
+			sourceTree = "<group>";
+		};
+		10E356522C789DCC00F15BA5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				10E356532C789E0800F15BA5 /* Defaults.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		10FA0F162C7627D90056919B = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +89,7 @@
 		10FA0F212C7627D90056919B /* click */ = {
 			isa = PBXGroup;
 			children = (
+				10E356522C789DCC00F15BA5 /* Extension */,
 				10FA0F372C7696D10056919B /* Soundpacks */,
 				10FA0F222C7627D90056919B /* ClickApp.swift */,
 				10FA0F242C7627D90056919B /* ContentView.swift */,
@@ -87,6 +113,7 @@
 		10FA0F372C7696D10056919B /* Soundpacks */ = {
 			isa = PBXGroup;
 			children = (
+				10E3564A2C789A2600F15BA5 /* eg-oreo */,
 				10FB435F2C76A3D3000685E8 /* eg-crystal-purple */,
 				10FA0F382C7696DF0056919B /* Soundpack.swift */,
 			);
@@ -120,6 +147,7 @@
 			name = click;
 			packageProductDependencies = (
 				10E356482C77D29100F15BA5 /* OggDecoder */,
+				10E356502C789DC000F15BA5 /* Defaults */,
 			);
 			productName = click;
 			productReference = 10FA0F1F2C7627D90056919B /* click.app */;
@@ -151,6 +179,7 @@
 			mainGroup = 10FA0F162C7627D90056919B;
 			packageReferences = (
 				10FB436C2C773086000685E8 /* XCRemoteSwiftPackageReference "OggDecoder" */,
+				10E3564F2C789DC000F15BA5 /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
 			productRefGroup = 10FA0F202C7627D90056919B /* Products */;
 			projectDirPath = "";
@@ -166,9 +195,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10E3564C2C789A3000F15BA5 /* eg-oreo.ogg in Resources */,
 				10FB43702C77309A000685E8 /* eg-crysyal-purple.ogg in Resources */,
 				10FA0F2A2C7627DA0056919B /* Preview Assets.xcassets in Resources */,
 				10FA0F272C7627DA0056919B /* Assets.xcassets in Resources */,
+				10E3564E2C789A5F00F15BA5 /* eg-oreo.json in Resources */,
 				10FB43602C76A3D3000685E8 /* eg-crysyal-purple.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,6 +214,7 @@
 				10FA0F252C7627D90056919B /* ContentView.swift in Sources */,
 				10FA0F322C762CD50056919B /* PermissionsView.swift in Sources */,
 				10FA0F232C7627D90056919B /* ClickApp.swift in Sources */,
+				10E356542C789E0800F15BA5 /* Defaults.swift in Sources */,
 				10FA0F392C7696DF0056919B /* Soundpack.swift in Sources */,
 				10FA0F362C76414F0056919B /* AppState.swift in Sources */,
 			);
@@ -387,6 +419,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		10E3564F2C789DC000F15BA5 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		10FB436C2C773086000685E8 /* XCRemoteSwiftPackageReference "OggDecoder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/arkasas/OggDecoder";
@@ -402,6 +442,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 10FB436C2C773086000685E8 /* XCRemoteSwiftPackageReference "OggDecoder" */;
 			productName = OggDecoder;
+		};
+		10E356502C789DC000F15BA5 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10E3564F2C789DC000F15BA5 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
