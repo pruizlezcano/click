@@ -40,26 +40,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             showPermissionsWindow()
             startPermissionCheckTimer()
         } else {
-            AppState.shared.permissionsGranted = true
-            loadSoundPack(Soundpack.egCrystalPurple)
-
-            // Global monitor
-            eventMonitor = NSEvent.addGlobalMonitorForEvents(
-                matching: [.keyDown, .keyUp, .flagsChanged],
-                handler: { event in
-                    self.handleEvent(event: event)
-                }
-            )
-
-            // Local motinor (when the app is focused)
-            eventMonitor = NSEvent.addLocalMonitorForEvents(
-                matching: [.keyDown, .keyUp, .flagsChanged],
-                handler: { event -> NSEvent? in
-                    self.handleEvent(event: event)
-                    return nil // Prevents the 'beep' sound by macOS
-                }
-            )
+            start()
         }
+    }
+
+    private func start() {
+        AppState.shared.permissionsGranted = true
+        loadSoundPack(Soundpack.egCrystalPurple)
+        // Global monitor
+        eventMonitor = NSEvent.addGlobalMonitorForEvents(
+            matching: [.keyDown, .keyUp, .flagsChanged],
+            handler: { event in
+                self.handleEvent(event: event)
+            }
+        )
+
+        // Local monitor (when the app is focused)
+        eventMonitor = NSEvent.addLocalMonitorForEvents(
+            matching: [.keyDown, .keyUp, .flagsChanged],
+            handler: { event -> NSEvent? in
+                self.handleEvent(event: event)
+                return nil // Prevents the 'beep' sound by macOS
+            }
+        )
     }
 
     private func showPermissionsWindow() {
@@ -106,10 +109,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func checkAndUpdatePermissions() {
         if checkPermissions() {
-            AppState.shared.permissionsGranted = true
             print("Accessibility permissions granted!")
             timer?.invalidate()
             permissionsWindow?.close()
+            start()
         }
     }
 
