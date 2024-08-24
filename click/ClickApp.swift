@@ -26,7 +26,7 @@ struct ClickApp: App {
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    private var permissionsWindow: NSWindow?
+    private var permissionsWindow: NSPanel?
     private var timer: Timer?
     private var eventMonitor: Any?
     private var audioPlayer: AVAudioPlayer?
@@ -68,7 +68,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         )
     }
 
-    private func showPermissionsWindow() {
+    func showPermissionsWindow() {
         let permissionsView = PermissionsView()
         let hostingController = NSHostingController(rootView: permissionsView)
 
@@ -84,7 +84,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
 
         // Create a window
-        permissionsWindow = NSWindow()
+        permissionsWindow = NSPanel()
         permissionsWindow?.contentView = visualEffect
         permissionsWindow?.titlebarAppearsTransparent = true
         permissionsWindow?.styleMask.insert(.closable)

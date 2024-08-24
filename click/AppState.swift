@@ -18,4 +18,8 @@ class AppState: ObservableObject {
     func loadSound(soundPack: Soundpack) {
         appDelegate?.loadSoundPack(soundPack)
     }
+
+    func showPermissionsWindow() {
+        appDelegate?.showPermissionsWindow()
+    }
 }
