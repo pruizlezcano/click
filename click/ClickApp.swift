@@ -5,6 +5,7 @@
 //  Created by Pablo Ruiz on 21/8/24.
 //
 
+import Defaults
 import SwiftUI
 
 @main
@@ -19,5 +20,10 @@ struct ClickApp: App {
         .environmentObject(appState)
         .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentSize)
+
+        MenuBarExtra("manu-bar", systemImage: "circle.fill") {
+            MenuBarView()
+                .environmentObject(appState)
+        }
     }
 }

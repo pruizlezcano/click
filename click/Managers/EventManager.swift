@@ -9,6 +9,7 @@ import SwiftUI
 
 class EventManager {
     private static var eventMonitor: Any?
+    private static var localEventMonitor: Any?
     private static var activeKeys: Set<UInt16> = []
     private static let soundQueue = DispatchQueue(label: "com.pruizlezcano.click.soundQueue")
 
@@ -22,7 +23,7 @@ class EventManager {
         )
 
         // Local monitor (when the app is focused)
-        eventMonitor = NSEvent.addLocalMonitorForEvents(
+        localEventMonitor = NSEvent.addLocalMonitorForEvents(
             matching: [.keyDown, .keyUp, .flagsChanged],
             handler: { event -> NSEvent? in
                 handleEvent(event: event)
@@ -58,6 +59,11 @@ class EventManager {
     static func removeEventMonitors() {
         if let monitor = eventMonitor {
             NSEvent.removeMonitor(monitor)
+            eventMonitor = nil
+        }
+        if let monitor = localEventMonitor {
+            NSEvent.removeMonitor(monitor)
+            localEventMonitor = nil
         }
     }
 }

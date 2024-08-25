@@ -50,22 +50,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         AppState.shared.startApp = { [weak self] in
             self?.start()
+            AppState.shared.isActive = true
         }
 
-        if !PermissionsManager.getStatus() {
-            AppState.shared.permissionsGranted = false
-        } else {
+        AppState.shared.stopApp = { [weak self] in
+            self?.stop()
+            AppState.shared.isActive = false
+        }
+
+        if PermissionsManager.getStatus() {
             start()
         }
     }
 
     private func start() {
-        AppState.shared.permissionsGranted = true
         SoundManager.loadSoundPack(Defaults[.soundpack])
         EventManager.setupEventMonitors()
     }
 
-    func applicationWillTerminate(_: Notification) {
+    private func stop() {
         EventManager.removeEventMonitors()
+    }
+
+    func applicationWillTerminate(_: Notification) {
+        stop()
     }
 }
