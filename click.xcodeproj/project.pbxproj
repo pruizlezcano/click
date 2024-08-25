@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100D02EF2C7A874A006A5C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D02EE2C7A874A006A5C1B /* AppDelegate.swift */; };
+		100D02F22C7A8791006A5C1B /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D02F12C7A8791006A5C1B /* PermissionsManager.swift */; };
+		100D02F42C7A8B30006A5C1B /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D02F32C7A8B30006A5C1B /* SoundManager.swift */; };
+		100D02F62C7A8BCA006A5C1B /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D02F52C7A8BCA006A5C1B /* EventManager.swift */; };
 		10E356492C77D29100F15BA5 /* OggDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = 10E356482C77D29100F15BA5 /* OggDecoder */; };
 		10E3564C2C789A3000F15BA5 /* eg-oreo.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 10E3564B2C789A3000F15BA5 /* eg-oreo.ogg */; };
 		10E3564E2C789A5F00F15BA5 /* eg-oreo.json in Resources */ = {isa = PBXBuildFile; fileRef = 10E3564D2C789A5F00F15BA5 /* eg-oreo.json */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		100D02EE2C7A874A006A5C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		100D02F12C7A8791006A5C1B /* PermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
+		100D02F32C7A8B30006A5C1B /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		100D02F52C7A8BCA006A5C1B /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		10E3564B2C789A3000F15BA5 /* eg-oreo.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "eg-oreo.ogg"; sourceTree = "<group>"; };
 		10E3564D2C789A5F00F15BA5 /* eg-oreo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "eg-oreo.json"; sourceTree = "<group>"; };
 		10E356532C789E0800F15BA5 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
@@ -53,6 +61,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		100D02F02C7A8782006A5C1B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				100D02F12C7A8791006A5C1B /* PermissionsManager.swift */,
+				100D02F32C7A8B30006A5C1B /* SoundManager.swift */,
+				100D02F52C7A8BCA006A5C1B /* EventManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		10E3564A2C789A2600F15BA5 /* eg-oreo */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +107,7 @@
 		10FA0F212C7627D90056919B /* click */ = {
 			isa = PBXGroup;
 			children = (
+				100D02F02C7A8782006A5C1B /* Managers */,
 				10E356522C789DCC00F15BA5 /* Extension */,
 				10FA0F372C7696D10056919B /* Soundpacks */,
 				10FA0F222C7627D90056919B /* ClickApp.swift */,
@@ -98,6 +117,7 @@
 				10FA0F282C7627DA0056919B /* Preview Content */,
 				10FA0F312C762CD50056919B /* PermissionsView.swift */,
 				10FA0F352C76414F0056919B /* AppState.swift */,
+				100D02EE2C7A874A006A5C1B /* AppDelegate.swift */,
 			);
 			path = click;
 			sourceTree = "<group>";
@@ -211,12 +231,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				100D02F62C7A8BCA006A5C1B /* EventManager.swift in Sources */,
 				10FA0F252C7627D90056919B /* ContentView.swift in Sources */,
 				10FA0F322C762CD50056919B /* PermissionsView.swift in Sources */,
+				100D02F22C7A8791006A5C1B /* PermissionsManager.swift in Sources */,
 				10FA0F232C7627D90056919B /* ClickApp.swift in Sources */,
 				10E356542C789E0800F15BA5 /* Defaults.swift in Sources */,
+				100D02EF2C7A874A006A5C1B /* AppDelegate.swift in Sources */,
 				10FA0F392C7696DF0056919B /* Soundpack.swift in Sources */,
 				10FA0F362C76414F0056919B /* AppState.swift in Sources */,
+				100D02F42C7A8B30006A5C1B /* SoundManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

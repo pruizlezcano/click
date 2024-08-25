@@ -13,13 +13,5 @@ class AppState: ObservableObject {
     @Published var permissionsGranted = false
     @Published var soundpack: Soundpack?
 
-    var appDelegate: AppDelegate?
-
-    func loadSound(soundPack: Soundpack) {
-        appDelegate?.loadSoundPack(soundPack)
-    }
-
-    func showPermissionsWindow() {
-        appDelegate?.showPermissionsWindow()
-    }
+    var startApp: (() -> Void)?
 }
