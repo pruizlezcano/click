@@ -21,9 +21,13 @@ struct ClickApp: App {
         .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentSize)
 
-        MenuBarExtra("manu-bar", systemImage: "circle.fill") {
+        MenuBarExtra("menu-bar", systemImage: "circle.fill") {
             MenuBarView()
                 .environmentObject(appState)
+        }
+
+        Settings {
+            SettingsView()
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ServiceManagement
 
 class AppState: ObservableObject {
     static let shared = AppState()
@@ -21,6 +22,18 @@ class AppState: ObservableObject {
             stopApp?()
         } else {
             startApp?()
+        }
+    }
+
+    func toggleLaunchAtLogin(_ enabled: Bool) {
+        do {
+            if enabled {
+                try SMAppService.mainApp.register()
+            } else {
+                try? SMAppService.mainApp.unregister()
+            }
+        } catch {
+            print("Failed to modify login item: \(error.localizedDescription)")
         }
     }
 }

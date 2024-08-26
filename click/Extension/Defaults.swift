@@ -10,4 +10,6 @@ import Foundation
 
 extension Defaults.Keys {
     static let soundpack = Key<Soundpack>("soundpack", default: .egCrystalPurple)
+    static let launchAtLogin = Key<Bool>("launchAtLogin", default: false)
+    static let startMinimized = Key<Bool>("startMinimized", default: false)
 }

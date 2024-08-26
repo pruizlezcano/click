@@ -5,10 +5,12 @@
 //  Created by Pablo Ruiz on 25/8/24.
 //
 
+import SettingsAccess
 import SwiftUI
 
 struct MenuBarView: View {
     @EnvironmentObject var appState: AppState
+
     var body: some View {
         Button {
             appState.toogle()
@@ -37,6 +39,15 @@ struct MenuBarView: View {
             Image(systemName: "speaker.wave.2")
             Text("Soundpack")
         }
+
+        Divider()
+
+        SettingsLink {
+            Text("Settings...")
+        } preAction: {
+            NSApp.activate(ignoringOtherApps: true)
+        } postAction: {}
+            .keyboardShortcut(",", modifiers: [.command])
 
         Divider()
 

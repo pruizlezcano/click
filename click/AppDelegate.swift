@@ -45,8 +45,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_: Notification) {
         print("Starting...")
+        NSApp.activate(ignoringOtherApps: true)
 
-        configureMainWindow()
+        if Defaults[.startMinimized] {
+            if let window = NSApp.windows.first {
+                window.close()
+            }
+        } else {
+            configureMainWindow()
+        }
 
         AppState.shared.startApp = { [weak self] in
             self?.start()
@@ -74,5 +81,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_: Notification) {
         stop()
+    }
+
+    func applicationShouldTerminateAfterLastWindowClosed(_: NSApplication) -> Bool {
+        NSApp.setActivationPolicy(.accessory)
+        return false
     }
 }
