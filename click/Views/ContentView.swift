@@ -86,7 +86,7 @@ struct ContentView: View {
                 VStack {
                     ForEach(Soundpack.allCases, id: \.self) { soundpack in
                         Button(action: {
-                            SoundManager.loadSoundPack(soundpack)
+                            AudioManager.loadSoundPack(soundpack)
                         }, label: {
                             HStack {
                                 Spacer()

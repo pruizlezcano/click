@@ -5,7 +5,7 @@
 //  Created by Pablo Ruiz on 21/8/24.
 //
 
-import Foundation
+import Defaults
 import ServiceManagement
 
 class AppState: ObservableObject {
@@ -13,6 +13,7 @@ class AppState: ObservableObject {
 
     @Published var soundpack: Soundpack?
     @Published var isActive = PermissionsManager.getStatus()
+    @Published var volume = Defaults[.volume]
 
     var startApp: (() -> Void)?
     var stopApp: (() -> Void)?

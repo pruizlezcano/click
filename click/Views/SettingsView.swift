@@ -27,8 +27,10 @@ struct CheckToggleStyle: ToggleStyle {
 }
 
 struct SettingsView: View {
+    @EnvironmentObject var appState: AppState
     @Default(.launchAtLogin) var launchAtLogin
     @Default(.startMinimized) var startMinimized
+    @Default(.volume) var volume
 
     var body: some View {
         TabView {
@@ -41,6 +43,8 @@ struct SettingsView: View {
                     Divider()
                         .padding(.horizontal, 8)
                     ToggleView("Start Minimized", isOn: $startMinimized)
+                    Divider()
+                        .padding(.horizontal, 8)
                 }
 
                 .clipShape(.rect(cornerRadius: 5))

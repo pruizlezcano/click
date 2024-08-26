@@ -42,12 +42,12 @@ class EventManager {
             case .keyDown:
                 if !activeKeys.contains(event.keyCode) {
                     activeKeys.insert(event.keyCode)
-                    SoundManager.playSound(keyCode: event.keyCode)
+                    AudioManager.playSound(keyCode: event.keyCode)
                 }
             case .flagsChanged:
                 // Return if key released (not caps lock)
                 guard event.modifierFlags.rawValue != 256 || event.keyCode == 57 else { return }
-                SoundManager.playSound(keyCode: event.keyCode)
+                AudioManager.playSound(keyCode: event.keyCode)
             case .keyUp:
                 activeKeys.remove(event.keyCode)
             default:

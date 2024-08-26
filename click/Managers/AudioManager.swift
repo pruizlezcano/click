@@ -1,5 +1,5 @@
 //
-//  SoundManager.swift
+//  AudioManager.swift
 //  click
 //
 //  Created by Pablo Ruiz on 24/8/24.
@@ -9,7 +9,7 @@ import AVFoundation
 import Defaults
 import OggDecoder
 
-class SoundManager {
+class AudioManager {
     private static var audioPlayer: AVAudioPlayer?
     private static var audioPlayers: [AVAudioPlayer] = []
 
@@ -50,6 +50,7 @@ class SoundManager {
         do {
             let newAudioPlayer = try AVAudioPlayer(contentsOf: audioUrl)
             newAudioPlayer.currentTime = startTime
+            newAudioPlayer.volume = AppState.shared.volume.volume
             newAudioPlayer.prepareToPlay()
             newAudioPlayer.play()
 

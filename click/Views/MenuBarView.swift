@@ -24,10 +24,28 @@ struct MenuBarView: View {
         .disabled(!PermissionsManager.getStatus())
         .keyboardShortcut("K", modifiers: [.command, .shift])
 
+        Divider()
+
+        Menu {
+            ForEach(VolumePreset.allCases, id: \.self) { volume in
+                Button {
+                    appState.volume = volume
+                } label: {
+                    if volume == appState.volume {
+                        Image(systemName: "checkmark")
+                    }
+                    Text(volume.rawValue.capitalized)
+                }
+            }
+        } label: {
+            Image(systemName: "speaker.wave.2")
+            Text("Volume")
+        }
+
         Menu {
             ForEach(Soundpack.allCases, id: \.self) { soundpack in
                 Button {
-                    SoundManager.loadSoundPack(soundpack)
+                    AudioManager.loadSoundPack(soundpack)
                 } label: {
                     if soundpack == appState.soundpack {
                         Image(systemName: "checkmark")
@@ -36,7 +54,7 @@ struct MenuBarView: View {
                 }
             }
         } label: {
-            Image(systemName: "speaker.wave.2")
+            Image(systemName: "circle.fill")
             Text("Soundpack")
         }
 
