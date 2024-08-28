@@ -5,6 +5,7 @@
 //  Created by Pablo Ruiz on 26/8/24.
 //
 
+import AppIntents
 import Defaults
 
 enum VolumePreset: String, CaseIterable, Defaults.Serializable {
@@ -18,5 +19,19 @@ enum VolumePreset: String, CaseIterable, Defaults.Serializable {
         case .balanced: 1
         case .loud: 2.5
         }
+    }
+}
+
+extension VolumePreset: AppEnum {
+    static var typeDisplayRepresentation: TypeDisplayRepresentation {
+        TypeDisplayRepresentation(name: "Soundpack")
+    }
+
+    static var caseDisplayRepresentations: [VolumePreset: DisplayRepresentation] {
+        [
+            .low: DisplayRepresentation(stringLiteral: "Low"),
+            .balanced: DisplayRepresentation(stringLiteral: "Balanced"),
+            .loud: DisplayRepresentation(stringLiteral: "Loud")
+        ]
     }
 }

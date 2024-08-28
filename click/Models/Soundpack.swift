@@ -5,6 +5,7 @@
 //  Created by Pablo Ruiz on 21/8/24.
 //
 
+import AppIntents
 import Defaults
 import Foundation
 
@@ -45,5 +46,18 @@ private func loadJSON(_ soundpack: String) -> SoundpackObject? {
     } catch {
         print("Failed to load or decode JSON: \(error.localizedDescription)")
         return nil
+    }
+}
+
+extension Soundpack: AppEnum {
+    static var typeDisplayRepresentation: TypeDisplayRepresentation {
+        TypeDisplayRepresentation(name: "Soundpack")
+    }
+
+    static var caseDisplayRepresentations: [Soundpack: DisplayRepresentation] {
+        [
+            .egCrystalPurple: DisplayRepresentation(stringLiteral: "EG Crystal Purple"),
+            .egOreo: DisplayRepresentation(stringLiteral: "EG Oreo")
+        ]
     }
 }

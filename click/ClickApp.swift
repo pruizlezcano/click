@@ -5,6 +5,7 @@
 //  Created by Pablo Ruiz on 21/8/24.
 //
 
+import AppIntents
 import Defaults
 import SwiftUI
 
