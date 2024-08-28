@@ -26,7 +26,6 @@ class AudioManager {
             if let savedWavUrl {
                 do {
                     audioPlayer = try AVAudioPlayer(contentsOf: savedWavUrl)
-
                     AppState.shared.soundpack = soundPack
                     audioPlayers = [AVAudioPlayer]()
                     Defaults[.soundpack] = soundPack
@@ -41,9 +40,8 @@ class AudioManager {
     }
 
     static func playSound(keyCode: UInt16) {
-        guard let soundpack = AppState.shared.soundpack else { return }
         guard let audioUrl = audioPlayer?.url else { return }
-        guard let sound = soundpack.soundpack?.defines[String(keyCode)] else { return }
+        guard let sound = AppState.shared.soundpack.soundpack?.defines[String(keyCode)] else { return }
 
         let startTime = TimeInterval(sound![0]) / 1000
         let duration = TimeInterval(sound![1]) / 1000

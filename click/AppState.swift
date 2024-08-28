@@ -11,7 +11,7 @@ import ServiceManagement
 class AppState: ObservableObject {
     static let shared = AppState()
 
-    @Published var soundpack: Soundpack?
+    @Published var soundpack: Soundpack = Defaults[.soundpack]
     @Published var isActive = PermissionsManager.getStatus()
     @Published var volume = Defaults[.volume]
 

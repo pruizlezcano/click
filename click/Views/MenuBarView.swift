@@ -26,36 +26,31 @@ struct MenuBarView: View {
 
         Divider()
 
-        Menu {
+        Picker(selection: $appState.volume) {
             ForEach(VolumePreset.allCases, id: \.self) { volume in
-                Button {
-                    appState.volume = volume
-                } label: {
-                    if volume == appState.volume {
-                        Image(systemName: "checkmark")
-                    }
+                HStack {
                     Text(volume.rawValue.capitalized)
                 }
+                .tag(volume)
             }
         } label: {
             Image(systemName: "speaker.wave.2")
             Text("Volume")
         }
 
-        Menu {
+        Picker(selection: $appState.soundpack) {
             ForEach(Soundpack.allCases, id: \.self) { soundpack in
-                Button {
-                    AudioManager.loadSoundPack(soundpack)
-                } label: {
-                    if soundpack == appState.soundpack {
-                        Image(systemName: "checkmark")
-                    }
+                HStack {
                     Text(soundpack.soundpack?.name ?? soundpack.rawValue)
                 }
+                .tag(soundpack)
             }
         } label: {
             Image(systemName: "circle.fill")
             Text("Soundpack")
+        }
+        .onChange(of: appState.soundpack) { _, newValue in
+            AudioManager.loadSoundPack(newValue)
         }
 
         Divider()
