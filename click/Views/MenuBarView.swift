@@ -58,6 +58,7 @@ struct MenuBarView: View {
         SettingsLink {
             Text("Settings...")
         } preAction: {
+            NSApp.setActivationPolicy(.regular)
             NSApp.activate(ignoringOtherApps: true)
         } postAction: {}
             .keyboardShortcut(",", modifiers: [.command])

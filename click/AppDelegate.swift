@@ -11,14 +11,6 @@ import OggDecoder
 import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    private var permissionsWindow: NSPanel?
-    private var timer: Timer?
-    private var eventMonitor: Any?
-    private var audioPlayer: AVAudioPlayer?
-    private var audioPlayers: [AVAudioPlayer] = []
-    private var activeKeys: Set<UInt16> = [] // Set to track currently pressed keys
-    private let soundQueue = DispatchQueue(label: "com.pruizlezcano.click.soundQueue")
-
     private func configureMainWindow() {
         if let window = NSApp.windows.first {
             let visualEffect = NSVisualEffectView()
@@ -84,7 +76,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_: NSApplication) -> Bool {
-        NSApp.setActivationPolicy(.accessory)
+        if PermissionsManager.getStatus() {
+            NSApp.setActivationPolicy(.accessory) // Hide from dock
+        }
         return false
+    }
+
+    func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows _: Bool) -> Bool {
+        NSApp.setActivationPolicy(.regular)
+        NSApp.activate(ignoringOtherApps: true)
+        return true
     }
 }
