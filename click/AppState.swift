@@ -18,7 +18,7 @@ class AppState: ObservableObject {
     var startApp: (() -> Void)?
     var stopApp: (() -> Void)?
 
-    func toogle() {
+    func toggle() {
         if isActive {
             stopApp?()
         } else {

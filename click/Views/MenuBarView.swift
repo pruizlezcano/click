@@ -13,7 +13,7 @@ struct MenuBarView: View {
 
     var body: some View {
         Button {
-            appState.toogle()
+            appState.toggle()
         } label: {
             if appState.isActive {
                 Text("Disable Click")
