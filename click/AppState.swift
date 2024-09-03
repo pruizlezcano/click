@@ -13,7 +13,9 @@ class AppState: ObservableObject {
 
     @Published var soundpack: Soundpack = Defaults[.soundpack]
     @Published var isActive = PermissionsManager.getStatus()
-    @Published var volume = Defaults[.volume]
+    @Published var volumePreset = Defaults[.volumePreset]
+    @Published var overrideVolume = Defaults[.overrideVolume]
+    @Published var customVolume = Defaults[.customVolume]
 
     var startApp: (() -> Void)?
     var stopApp: (() -> Void)?

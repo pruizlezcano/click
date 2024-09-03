@@ -48,7 +48,11 @@ class AudioManager {
         do {
             let newAudioPlayer = try AVAudioPlayer(contentsOf: audioUrl)
             newAudioPlayer.currentTime = startTime
-            newAudioPlayer.volume = AppState.shared.volume.volume
+            if AppState.shared.overrideVolume {
+                newAudioPlayer.volume = AppState.shared.customVolume
+            } else {
+                newAudioPlayer.volume = AppState.shared.volumePreset.volume
+            }
             newAudioPlayer.prepareToPlay()
             newAudioPlayer.play()
 

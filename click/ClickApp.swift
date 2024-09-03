@@ -30,5 +30,6 @@ struct ClickApp: App {
         Settings {
             SettingsView()
         }
+        .environmentObject(appState)
     }
 }

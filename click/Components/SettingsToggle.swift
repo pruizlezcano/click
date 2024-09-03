@@ -1,5 +1,5 @@
 //
-//  ToogleView.swift
+//  SettingsToggle.swift
 //  click
 //
 //  Created by Pablo Ruiz on 25/8/24.
@@ -7,16 +7,14 @@
 
 import SwiftUI
 
-struct ToggleView: View {
+struct SettingsToggle: View {
     let elementMinHeight: CGFloat = 34
     let horizontalPadding: CGFloat = 8
-    let iconSize: CGFloat = 24
 
     let title: LocalizedStringKey
     @Binding var value: Bool
 
     let disabled: Bool
-    @State var isShowingDescription: Bool = false
 
     public init(
         _ title: LocalizedStringKey,
@@ -50,8 +48,8 @@ struct ToggleView: View {
 
 #Preview {
     VStack(spacing: 20) {
-        ToggleView("Enabled Toggle", isOn: .constant(true))
-        ToggleView("Disabled Toggle", isOn: .constant(false), disabled: true)
+        SettingsToggle("Enabled Toggle", isOn: .constant(true))
+        SettingsToggle("Disabled Toggle", isOn: .constant(false), disabled: true)
     }
     .padding()
     .previewLayout(.sizeThatFits)

@@ -13,13 +13,15 @@
 		100D02F62C7A8BCA006A5C1B /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D02F52C7A8BCA006A5C1B /* EventManager.swift */; };
 		10174E7F2C7B4AB700A6AEE6 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10174E7E2C7B4AB700A6AEE6 /* MenuBarView.swift */; };
 		10174E812C7BA50B00A6AEE6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10174E802C7BA50B00A6AEE6 /* SettingsView.swift */; };
-		10174E842C7BB00B00A6AEE6 /* ToogleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10174E832C7BB00B00A6AEE6 /* ToogleView.swift */; };
+		10174E842C7BB00B00A6AEE6 /* SettingsToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10174E832C7BB00B00A6AEE6 /* SettingsToggle.swift */; };
 		10A636E02C7C6B4000C2EA12 /* SettingsAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 10A636DF2C7C6B4000C2EA12 /* SettingsAccess */; };
 		10A636E32C7C7E5C00C2EA12 /* VolumePreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A636E22C7C7E5C00C2EA12 /* VolumePreset.swift */; };
 		10A637362C7D1B9D00C2EA12 /* ToogleIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A637352C7D1B9D00C2EA12 /* ToogleIntent.swift */; };
 		10A6373A2C7D23C600C2EA12 /* SoundpackIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A637392C7D23C600C2EA12 /* SoundpackIntent.swift */; };
 		10A6373E2C7D279200C2EA12 /* VolumePresetIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A6373D2C7D279200C2EA12 /* VolumePresetIntent.swift */; };
 		10A637402C7D2AD800C2EA12 /* GetStatusIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A6373F2C7D2AD800C2EA12 /* GetStatusIntent.swift */; };
+		10D244392C87463E00D99C0C /* SettingsSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D244382C87463E00D99C0C /* SettingsSlider.swift */; };
+		10D2443B2C87515000D99C0C /* CustomVolumeIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2443A2C87515000D99C0C /* CustomVolumeIntent.swift */; };
 		10E356492C77D29100F15BA5 /* OggDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = 10E356482C77D29100F15BA5 /* OggDecoder */; };
 		10E3564C2C789A3000F15BA5 /* eg-oreo.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 10E3564B2C789A3000F15BA5 /* eg-oreo.ogg */; };
 		10E3564E2C789A5F00F15BA5 /* eg-oreo.json in Resources */ = {isa = PBXBuildFile; fileRef = 10E3564D2C789A5F00F15BA5 /* eg-oreo.json */; };
@@ -43,12 +45,14 @@
 		100D02F52C7A8BCA006A5C1B /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		10174E7E2C7B4AB700A6AEE6 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		10174E802C7BA50B00A6AEE6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		10174E832C7BB00B00A6AEE6 /* ToogleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToogleView.swift; sourceTree = "<group>"; };
+		10174E832C7BB00B00A6AEE6 /* SettingsToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsToggle.swift; sourceTree = "<group>"; };
 		10A636E22C7C7E5C00C2EA12 /* VolumePreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumePreset.swift; sourceTree = "<group>"; };
 		10A637352C7D1B9D00C2EA12 /* ToogleIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToogleIntent.swift; sourceTree = "<group>"; };
 		10A637392C7D23C600C2EA12 /* SoundpackIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundpackIntent.swift; sourceTree = "<group>"; };
 		10A6373D2C7D279200C2EA12 /* VolumePresetIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumePresetIntent.swift; sourceTree = "<group>"; };
 		10A6373F2C7D2AD800C2EA12 /* GetStatusIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStatusIntent.swift; sourceTree = "<group>"; };
+		10D244382C87463E00D99C0C /* SettingsSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSlider.swift; sourceTree = "<group>"; };
+		10D2443A2C87515000D99C0C /* CustomVolumeIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVolumeIntent.swift; sourceTree = "<group>"; };
 		10E3564B2C789A3000F15BA5 /* eg-oreo.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "eg-oreo.ogg"; sourceTree = "<group>"; };
 		10E3564D2C789A5F00F15BA5 /* eg-oreo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "eg-oreo.json"; sourceTree = "<group>"; };
 		10E356532C789E0800F15BA5 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
@@ -103,7 +107,8 @@
 		10174E852C7BB18A00A6AEE6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				10174E832C7BB00B00A6AEE6 /* ToogleView.swift */,
+				10174E832C7BB00B00A6AEE6 /* SettingsToggle.swift */,
+				10D244382C87463E00D99C0C /* SettingsSlider.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 				10A637392C7D23C600C2EA12 /* SoundpackIntent.swift */,
 				10A6373D2C7D279200C2EA12 /* VolumePresetIntent.swift */,
 				10A6373F2C7D2AD800C2EA12 /* GetStatusIntent.swift */,
+				10D2443A2C87515000D99C0C /* CustomVolumeIntent.swift */,
 			);
 			path = Intents;
 			sourceTree = "<group>";
@@ -294,6 +300,7 @@
 				100D02F62C7A8BCA006A5C1B /* EventManager.swift in Sources */,
 				10FA0F252C7627D90056919B /* ContentView.swift in Sources */,
 				10FA0F322C762CD50056919B /* PermissionsView.swift in Sources */,
+				10D244392C87463E00D99C0C /* SettingsSlider.swift in Sources */,
 				100D02F22C7A8791006A5C1B /* PermissionsManager.swift in Sources */,
 				10A637402C7D2AD800C2EA12 /* GetStatusIntent.swift in Sources */,
 				10A637362C7D1B9D00C2EA12 /* ToogleIntent.swift in Sources */,
@@ -305,7 +312,8 @@
 				10FA0F362C76414F0056919B /* AppState.swift in Sources */,
 				10174E812C7BA50B00A6AEE6 /* SettingsView.swift in Sources */,
 				10A6373E2C7D279200C2EA12 /* VolumePresetIntent.swift in Sources */,
-				10174E842C7BB00B00A6AEE6 /* ToogleView.swift in Sources */,
+				10174E842C7BB00B00A6AEE6 /* SettingsToggle.swift in Sources */,
+				10D2443B2C87515000D99C0C /* CustomVolumeIntent.swift in Sources */,
 				100D02F42C7A8B30006A5C1B /* AudioManager.swift in Sources */,
 				10A6373A2C7D23C600C2EA12 /* SoundpackIntent.swift in Sources */,
 				10174E7F2C7B4AB700A6AEE6 /* MenuBarView.swift in Sources */,

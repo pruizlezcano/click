@@ -26,7 +26,7 @@ struct MenuBarView: View {
 
         Divider()
 
-        Picker(selection: $appState.volume) {
+        Picker(selection: $appState.volumePreset) {
             ForEach(VolumePreset.allCases, id: \.self) { volume in
                 HStack {
                     Text(volume.rawValue.capitalized)

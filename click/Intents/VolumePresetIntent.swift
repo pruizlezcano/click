@@ -16,7 +16,8 @@ struct VolumePresetIntent: AppIntent {
 
     @MainActor
     func perform() async throws -> some IntentResult {
-        AppState.shared.volume = volumePreset
+        AppState.shared.volumePreset = volumePreset
+        AppState.shared.overrideVolume = false
         return .result()
     }
 }

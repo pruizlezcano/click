@@ -8,45 +8,27 @@
 import Defaults
 import SwiftUI
 
-struct CheckToggleStyle: ToggleStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        Button {
-            configuration.isOn.toggle()
-        } label: {
-            Label {
-                configuration.label
-            } icon: {
-                Image(systemName: configuration.isOn ? "checkmark.circle.fill" : "circle")
-                    .foregroundStyle(configuration.isOn ? Color.accentColor : .secondary)
-                    .accessibility(label: Text(configuration.isOn ? "Checked" : "Unchecked"))
-                    .imageScale(.large)
-            }
-        }
-        .buttonStyle(.plain)
-    }
-}
-
 struct SettingsView: View {
     @EnvironmentObject var appState: AppState
     @Default(.launchAtLogin) var launchAtLogin
     @Default(.startMinimized) var startMinimized
-    @Default(.volume) var volume
+    @Default(.overrideVolume) var overrideVolume
+    @Default(.customVolume) var customVolume
 
     var body: some View {
         TabView {
             VStack {
                 VStack(spacing: 0) {
-                    ToggleView("Launch at Login", isOn: $launchAtLogin)
+                    SettingsToggle("Launch at Login", isOn: $launchAtLogin)
                         .onChange(of: launchAtLogin) { _, newValue in
-                            AppState.shared.toggleLaunchAtLogin(newValue)
+                            appState.toggleLaunchAtLogin(newValue)
                         }
                     Divider()
                         .padding(.horizontal, 8)
-                    ToggleView("Start Minimized", isOn: $startMinimized)
+                    SettingsToggle("Start Minimized", isOn: $startMinimized)
                     Divider()
                         .padding(.horizontal, 8)
                 }
-
                 .clipShape(.rect(cornerRadius: 5))
                 .overlay {
                     RoundedRectangle(cornerRadius: 5)
@@ -56,6 +38,38 @@ struct SettingsView: View {
             .toggleStyle(.switch)
             .tabItem {
                 Label("General", systemImage: "gear")
+            }
+
+            VStack {
+                VStack(spacing: 0) {
+                    SettingsToggle("Override volume presets", isOn: $appState.overrideVolume)
+                        .onChange(of: appState.overrideVolume) { _, newValue in
+                            overrideVolume = newValue
+                        }
+                    Divider()
+                        .padding(.horizontal, 8)
+                    SettingsSlider(
+                        "Custom volume",
+                        value: $appState.customVolume,
+                        disabled: !appState.overrideVolume,
+                        in: 0.5 ... 10,
+                        step: 1,
+                        leftIcon: "speaker.fill",
+                        rightIcon: "speaker.wave.3.fill"
+                    )
+                    .onChange(of: appState.customVolume) { _, newValue in
+                        customVolume = newValue
+                    }
+                }
+                .clipShape(.rect(cornerRadius: 5))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 5)
+                        .strokeBorder(.quaternary, lineWidth: 1)
+                }
+            }
+            .toggleStyle(.switch)
+            .tabItem {
+                Label("Sound", systemImage: "speaker.wave.2")
             }
         }
         .scenePadding()
