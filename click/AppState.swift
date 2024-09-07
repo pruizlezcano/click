@@ -6,6 +6,7 @@
 //
 
 import Defaults
+import KeyboardShortcuts
 import ServiceManagement
 
 class AppState: ObservableObject {
@@ -19,6 +20,12 @@ class AppState: ObservableObject {
 
     var startApp: (() -> Void)?
     var stopApp: (() -> Void)?
+
+    init() {
+        KeyboardShortcuts.onKeyUp(for: .toggle) { [self] in
+            toggle()
+        }
+    }
 
     func toggle() {
         if isActive {

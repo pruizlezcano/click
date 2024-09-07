@@ -13,11 +13,7 @@ struct ToggleEventMonitorIntent: AppIntent {
 
     @MainActor
     func perform() async throws -> some IntentResult {
-        if AppState.shared.isActive {
-            AppState.shared.stopApp?()
-        } else {
-            AppState.shared.startApp?()
-        }
+        AppState.shared.toggle()
         return .result()
     }
 }

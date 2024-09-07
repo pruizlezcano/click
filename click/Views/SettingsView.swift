@@ -71,6 +71,22 @@ struct SettingsView: View {
             .tabItem {
                 Label("Sound", systemImage: "speaker.wave.2")
             }
+
+            VStack {
+                VStack(spacing: 0) {
+                    SettingsShortcutRecorder("Toggle Click", name: .toggle)
+                    Divider()
+                        .padding(.horizontal, 8)
+                }
+                .clipShape(.rect(cornerRadius: 5))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 5)
+                        .strokeBorder(.quaternary, lineWidth: 1)
+                }
+            }
+            .tabItem {
+                Label("Shortcuts", systemImage: "command")
+            }
         }
         .scenePadding()
         .frame(maxWidth: 400)

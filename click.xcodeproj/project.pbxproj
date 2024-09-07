@@ -20,6 +20,9 @@
 		10A6373A2C7D23C600C2EA12 /* SoundpackIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A637392C7D23C600C2EA12 /* SoundpackIntent.swift */; };
 		10A6373E2C7D279200C2EA12 /* VolumePresetIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A6373D2C7D279200C2EA12 /* VolumePresetIntent.swift */; };
 		10A637402C7D2AD800C2EA12 /* GetStatusIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A6373F2C7D2AD800C2EA12 /* GetStatusIntent.swift */; };
+		10BAAC052C8C5F660024E3E0 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 10BAAC042C8C5F660024E3E0 /* KeyboardShortcuts */; };
+		10BAAC072C8C5F920024E3E0 /* KeyboardShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAAC062C8C5F920024E3E0 /* KeyboardShortcuts.swift */; };
+		10BAAC092C8C5FC20024E3E0 /* SettingsShortcutRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAAC082C8C5FC20024E3E0 /* SettingsShortcutRecorder.swift */; };
 		10D244392C87463E00D99C0C /* SettingsSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D244382C87463E00D99C0C /* SettingsSlider.swift */; };
 		10D2443B2C87515000D99C0C /* CustomVolumeIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2443A2C87515000D99C0C /* CustomVolumeIntent.swift */; };
 		10E356492C77D29100F15BA5 /* OggDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = 10E356482C77D29100F15BA5 /* OggDecoder */; };
@@ -51,6 +54,8 @@
 		10A637392C7D23C600C2EA12 /* SoundpackIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundpackIntent.swift; sourceTree = "<group>"; };
 		10A6373D2C7D279200C2EA12 /* VolumePresetIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumePresetIntent.swift; sourceTree = "<group>"; };
 		10A6373F2C7D2AD800C2EA12 /* GetStatusIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStatusIntent.swift; sourceTree = "<group>"; };
+		10BAAC062C8C5F920024E3E0 /* KeyboardShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcuts.swift; sourceTree = "<group>"; };
+		10BAAC082C8C5FC20024E3E0 /* SettingsShortcutRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsShortcutRecorder.swift; sourceTree = "<group>"; };
 		10D244382C87463E00D99C0C /* SettingsSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSlider.swift; sourceTree = "<group>"; };
 		10D2443A2C87515000D99C0C /* CustomVolumeIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVolumeIntent.swift; sourceTree = "<group>"; };
 		10E3564B2C789A3000F15BA5 /* eg-oreo.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "eg-oreo.ogg"; sourceTree = "<group>"; };
@@ -75,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A636E02C7C6B4000C2EA12 /* SettingsAccess in Frameworks */,
+				10BAAC052C8C5F660024E3E0 /* KeyboardShortcuts in Frameworks */,
 				10E356512C789DC000F15BA5 /* Defaults in Frameworks */,
 				10E356492C77D29100F15BA5 /* OggDecoder in Frameworks */,
 			);
@@ -109,6 +115,7 @@
 			children = (
 				10174E832C7BB00B00A6AEE6 /* SettingsToggle.swift */,
 				10D244382C87463E00D99C0C /* SettingsSlider.swift */,
+				10BAAC082C8C5FC20024E3E0 /* SettingsShortcutRecorder.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -143,12 +150,13 @@
 			path = "eg-oreo";
 			sourceTree = "<group>";
 		};
-		10E356522C789DCC00F15BA5 /* Extension */ = {
+		10E356522C789DCC00F15BA5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				10E356532C789E0800F15BA5 /* Defaults.swift */,
+				10BAAC062C8C5F920024E3E0 /* KeyboardShortcuts.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		10FA0F162C7627D90056919B = {
@@ -172,7 +180,7 @@
 			children = (
 				10A637342C7D1B7600C2EA12 /* Intents */,
 				10174E852C7BB18A00A6AEE6 /* Components */,
-				10E356522C789DCC00F15BA5 /* Extension */,
+				10E356522C789DCC00F15BA5 /* Extensions */,
 				100D02F02C7A8782006A5C1B /* Managers */,
 				10A636E12C7C7E4B00C2EA12 /* Models */,
 				10FA0F372C7696D10056919B /* Soundpacks */,
@@ -233,6 +241,7 @@
 				10E356482C77D29100F15BA5 /* OggDecoder */,
 				10E356502C789DC000F15BA5 /* Defaults */,
 				10A636DF2C7C6B4000C2EA12 /* SettingsAccess */,
+				10BAAC042C8C5F660024E3E0 /* KeyboardShortcuts */,
 			);
 			productName = click;
 			productReference = 10FA0F1F2C7627D90056919B /* click.app */;
@@ -266,6 +275,7 @@
 				10FB436C2C773086000685E8 /* XCRemoteSwiftPackageReference "OggDecoder" */,
 				10E3564F2C789DC000F15BA5 /* XCRemoteSwiftPackageReference "Defaults" */,
 				10A636DE2C7C6B4000C2EA12 /* XCRemoteSwiftPackageReference "SettingsAccess" */,
+				10BAAC032C8C5F660024E3E0 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 			);
 			productRefGroup = 10FA0F202C7627D90056919B /* Products */;
 			projectDirPath = "";
@@ -298,8 +308,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				100D02F62C7A8BCA006A5C1B /* EventManager.swift in Sources */,
+				10BAAC072C8C5F920024E3E0 /* KeyboardShortcuts.swift in Sources */,
 				10FA0F252C7627D90056919B /* ContentView.swift in Sources */,
 				10FA0F322C762CD50056919B /* PermissionsView.swift in Sources */,
+				10BAAC092C8C5FC20024E3E0 /* SettingsShortcutRecorder.swift in Sources */,
 				10D244392C87463E00D99C0C /* SettingsSlider.swift in Sources */,
 				100D02F22C7A8791006A5C1B /* PermissionsManager.swift in Sources */,
 				10A637402C7D2AD800C2EA12 /* GetStatusIntent.swift in Sources */,
@@ -527,6 +539,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		10BAAC032C8C5F660024E3E0 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
 		10E3564F2C789DC000F15BA5 /* XCRemoteSwiftPackageReference "Defaults" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/Defaults";
@@ -550,6 +570,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 10A636DE2C7C6B4000C2EA12 /* XCRemoteSwiftPackageReference "SettingsAccess" */;
 			productName = SettingsAccess;
+		};
+		10BAAC042C8C5F660024E3E0 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10BAAC032C8C5F660024E3E0 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
 		};
 		10E356482C77D29100F15BA5 /* OggDecoder */ = {
 			isa = XCSwiftPackageProductDependency;
