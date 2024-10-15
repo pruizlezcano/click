@@ -59,6 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         if PermissionsManager.getStatus() {
             start()
+            NotificationsManager.requestPermission()
         }
     }
 

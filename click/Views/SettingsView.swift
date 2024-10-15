@@ -14,6 +14,7 @@ struct SettingsView: View {
     @Default(.startMinimized) var startMinimized
     @Default(.overrideVolume) var overrideVolume
     @Default(.customVolume) var customVolume
+    @Default(.showNotifications) var showNotifications
 
     var body: some View {
         TabView {
@@ -26,8 +27,15 @@ struct SettingsView: View {
                     Divider()
                         .padding(.horizontal, 8)
                     SettingsToggle("Start Minimized", isOn: $startMinimized)
-                    Divider()
-                        .padding(.horizontal, 8)
+                }
+                .clipShape(.rect(cornerRadius: 5))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 5)
+                        .strokeBorder(.quaternary, lineWidth: 1)
+                }
+
+                VStack(spacing: 0) {
+                    SettingsToggle("Notifications", isOn: $showNotifications)
                 }
                 .clipShape(.rect(cornerRadius: 5))
                 .overlay {

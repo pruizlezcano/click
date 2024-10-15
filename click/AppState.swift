@@ -24,6 +24,7 @@ class AppState: ObservableObject {
     init() {
         KeyboardShortcuts.onKeyUp(for: .toggle) { [self] in
             toggle()
+            NotificationsManager.stateNotification(state: isActive)
         }
     }
 

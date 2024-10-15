@@ -11,6 +11,7 @@
 		100D02F22C7A8791006A5C1B /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D02F12C7A8791006A5C1B /* PermissionsManager.swift */; };
 		100D02F42C7A8B30006A5C1B /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D02F32C7A8B30006A5C1B /* AudioManager.swift */; };
 		100D02F62C7A8BCA006A5C1B /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D02F52C7A8BCA006A5C1B /* EventManager.swift */; };
+		100E085F2C95A65F00F0DEA6 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E085E2C95A65F00F0DEA6 /* NotificationsManager.swift */; };
 		10174E7F2C7B4AB700A6AEE6 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10174E7E2C7B4AB700A6AEE6 /* MenuBarView.swift */; };
 		10174E812C7BA50B00A6AEE6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10174E802C7BA50B00A6AEE6 /* SettingsView.swift */; };
 		10174E842C7BB00B00A6AEE6 /* SettingsToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10174E832C7BB00B00A6AEE6 /* SettingsToggle.swift */; };
@@ -46,6 +47,7 @@
 		100D02F12C7A8791006A5C1B /* PermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		100D02F32C7A8B30006A5C1B /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		100D02F52C7A8BCA006A5C1B /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		100E085E2C95A65F00F0DEA6 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		10174E7E2C7B4AB700A6AEE6 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		10174E802C7BA50B00A6AEE6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		10174E832C7BB00B00A6AEE6 /* SettingsToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsToggle.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				100D02F12C7A8791006A5C1B /* PermissionsManager.swift */,
 				100D02F32C7A8B30006A5C1B /* AudioManager.swift */,
 				100D02F52C7A8BCA006A5C1B /* EventManager.swift */,
+				100E085E2C95A65F00F0DEA6 /* NotificationsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				10BAAC072C8C5F920024E3E0 /* KeyboardShortcuts.swift in Sources */,
 				10FA0F252C7627D90056919B /* ContentView.swift in Sources */,
 				10FA0F322C762CD50056919B /* PermissionsView.swift in Sources */,
+				100E085F2C95A65F00F0DEA6 /* NotificationsManager.swift in Sources */,
 				10BAAC092C8C5FC20024E3E0 /* SettingsShortcutRecorder.swift in Sources */,
 				10D244392C87463E00D99C0C /* SettingsSlider.swift in Sources */,
 				100D02F22C7A8791006A5C1B /* PermissionsManager.swift in Sources */,
