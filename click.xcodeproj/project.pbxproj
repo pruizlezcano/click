@@ -16,6 +16,7 @@
 		10174E812C7BA50B00A6AEE6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10174E802C7BA50B00A6AEE6 /* SettingsView.swift */; };
 		10174E842C7BB00B00A6AEE6 /* SettingsToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10174E832C7BB00B00A6AEE6 /* SettingsToggle.swift */; };
 		102B25182D1F3CAD003E30AC /* OutputDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B25172D1F3CA9003E30AC /* OutputDevice.swift */; };
+		102B251C2D201EE7003E30AC /* OutputDeviceIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B251B2D201EE1003E30AC /* OutputDeviceIntent.swift */; };
 		10A636E02C7C6B4000C2EA12 /* SettingsAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 10A636DF2C7C6B4000C2EA12 /* SettingsAccess */; };
 		10A636E32C7C7E5C00C2EA12 /* VolumePreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A636E22C7C7E5C00C2EA12 /* VolumePreset.swift */; };
 		10A637362C7D1B9D00C2EA12 /* ToogleIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A637352C7D1B9D00C2EA12 /* ToogleIntent.swift */; };
@@ -53,6 +54,7 @@
 		10174E802C7BA50B00A6AEE6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		10174E832C7BB00B00A6AEE6 /* SettingsToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsToggle.swift; sourceTree = "<group>"; };
 		102B25172D1F3CA9003E30AC /* OutputDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputDevice.swift; sourceTree = "<group>"; };
+		102B251B2D201EE1003E30AC /* OutputDeviceIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputDeviceIntent.swift; sourceTree = "<group>"; };
 		10A636E22C7C7E5C00C2EA12 /* VolumePreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumePreset.swift; sourceTree = "<group>"; };
 		10A637352C7D1B9D00C2EA12 /* ToogleIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToogleIntent.swift; sourceTree = "<group>"; };
 		10A637392C7D23C600C2EA12 /* SoundpackIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundpackIntent.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		10A637342C7D1B7600C2EA12 /* Intents */ = {
 			isa = PBXGroup;
 			children = (
+				102B251B2D201EE1003E30AC /* OutputDeviceIntent.swift */,
 				10A637352C7D1B9D00C2EA12 /* ToogleIntent.swift */,
 				10A637392C7D23C600C2EA12 /* SoundpackIntent.swift */,
 				10A6373D2C7D279200C2EA12 /* VolumePresetIntent.swift */,
@@ -328,6 +331,7 @@
 				10A636E32C7C7E5C00C2EA12 /* VolumePreset.swift in Sources */,
 				10E356542C789E0800F15BA5 /* Defaults.swift in Sources */,
 				100D02EF2C7A874A006A5C1B /* AppDelegate.swift in Sources */,
+				102B251C2D201EE7003E30AC /* OutputDeviceIntent.swift in Sources */,
 				10FA0F392C7696DF0056919B /* Soundpack.swift in Sources */,
 				10FA0F362C76414F0056919B /* AppState.swift in Sources */,
 				10174E812C7BA50B00A6AEE6 /* SettingsView.swift in Sources */,

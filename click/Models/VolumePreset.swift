@@ -24,7 +24,7 @@ enum VolumePreset: String, CaseIterable, Defaults.Serializable {
 
 extension VolumePreset: AppEnum {
     static var typeDisplayRepresentation: TypeDisplayRepresentation {
-        TypeDisplayRepresentation(name: "Soundpack")
+        TypeDisplayRepresentation(name: "Volume Preset")
     }
 
     static var caseDisplayRepresentations: [VolumePreset: DisplayRepresentation] {
