@@ -47,6 +47,12 @@ class AudioManager {
         let duration = TimeInterval(sound![1]) / 1000
         do {
             let newAudioPlayer = try AVAudioPlayer(contentsOf: audioUrl)
+            if AppState.shared.outputDevice == .headphones {
+                newAudioPlayer.currentDevice = "BuiltInHeadphoneOutputDevice"
+            } else if AppState.shared.outputDevice == .speaker {
+                newAudioPlayer.currentDevice = "BuiltInSpeakerDevice"
+            }
+
             newAudioPlayer.currentTime = startTime
             if AppState.shared.overrideVolume {
                 newAudioPlayer.volume = AppState.shared.customVolume

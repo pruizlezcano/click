@@ -16,4 +16,5 @@ extension Defaults.Keys {
     static let overrideVolume = Key<Bool>("overrideVolume", default: false)
     static let customVolume = Key<Float>("customVolume", default: 1)
     static let showNotifications = Key<Bool>("showNotifications", default: true)
+    static let outputDevice = Key<OutputDevice>("outputDevice", default: .any)
 }

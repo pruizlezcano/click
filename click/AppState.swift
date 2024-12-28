@@ -17,6 +17,7 @@ class AppState: ObservableObject {
     @Published var volumePreset = Defaults[.volumePreset]
     @Published var overrideVolume = Defaults[.overrideVolume]
     @Published var customVolume = Defaults[.customVolume]
+    @Published var outputDevice = Defaults[.outputDevice]
 
     var startApp: (() -> Void)?
     var stopApp: (() -> Void)?
