@@ -89,10 +89,25 @@ struct ContentView: View {
                             AudioManager.loadSoundPack(soundpack)
                         }, label: {
                             HStack {
-                                Spacer()
                                 Text(soundpack.soundpack?.name ?? soundpack.rawValue)
                                     .font(.headline)
                                 Spacer()
+                                Button(action: {
+                                    AudioManager.previewSoundPack(soundpack)
+                                }, label: {
+                                    HStack {
+                                        Image(systemName: "play.fill")
+                                        Text("Preview")
+                                    }
+                                    .font(.subheadline)
+                                    .padding(4)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 6)
+                                            .stroke(Color.secondary, lineWidth: 0.5)
+                                            .fill(.secondary.opacity(0.3))
+                                    )
+                                })
+                                .buttonStyle(.plain)
                             }
                             .padding()
                             .background(
