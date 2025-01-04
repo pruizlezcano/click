@@ -22,9 +22,19 @@ struct ClickApp: App {
         .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentSize)
 
-        MenuBarExtra("menu-bar", systemImage: "circle.fill") {
+        MenuBarExtra {
             MenuBarView()
                 .environmentObject(appState)
+        } label: {
+            let image: NSImage = {
+                let ratio = $0.size.height / $0.size.width
+                $0.size.height = 18
+                $0.size.width = 18 / ratio
+                $0.isTemplate = true
+                return $0
+            }(NSImage(named: "MenuIcon")!)
+
+            Image(nsImage: image)
         }
 
         Settings {
