@@ -18,21 +18,33 @@ struct PermissionsView: View {
                 .padding()
 
             HStack {
+                Text("1.")
+                    .foregroundStyle(.secondary)
                 Text("Open System Preferences")
                     .bold()
             }
+            .padding(1)
             HStack {
+                Text("2.")
+                    .foregroundStyle(.secondary)
                 Text("Privacy & Security")
                     .bold()
             }
+            .padding(1)
             HStack {
+                Text("3.")
+                    .foregroundStyle(.secondary)
                 Text("Accessibility")
                     .bold()
             }
+            .padding(1)
             HStack {
-                Text("Enable Click.app")
+                Text("4.")
+                    .foregroundStyle(.secondary)
+                Text("Enable Click")
                     .bold()
             }
+            .padding(1)
         }
         .padding()
         .frame(width: 330, height: 300)
