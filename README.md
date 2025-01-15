@@ -8,8 +8,7 @@
 
 Transform your Mac typing experience with the satisfying sounds of premium mechanical keyboards. Using high-quality [Mechvibes](https://github.com/hainguyents13/mechvibes/) sound packs, Click brings the tactile audio feedback of mechanical switches to any keyboard.
 
-
-<br /><br /><br />
+<a href="https://apps.apple.com/us/app/click-keyboard-sounds/id6740429323"><img height="56" src="./.github/images/app_store_badge.svg"/></a>
 
 ## Features
 
@@ -30,7 +29,9 @@ Transform your Mac typing experience with the satisfying sounds of premium mecha
 
 ## Installation
 
-1. Download Click from the [Mac App Store]() or [GitHub Releases]()
+1. Download Click:
+   1. [Mac App Store](https://apps.apple.com/us/app/click-keyboard-sounds/id6740429323): Get automatic updates
+   2. [GitHub Releases](https://github.com/pruizlezcano/click/releases/latest): Manual updates required
 2. Launch the app
 3. Grant accessibility permissions when prompted
 4. Select your preferred switch sound
