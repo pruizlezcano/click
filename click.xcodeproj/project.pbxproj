@@ -12,6 +12,8 @@
 		100D02F42C7A8B30006A5C1B /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D02F32C7A8B30006A5C1B /* AudioManager.swift */; };
 		100D02F62C7A8BCA006A5C1B /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D02F52C7A8BCA006A5C1B /* EventManager.swift */; };
 		100E085F2C95A65F00F0DEA6 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E085E2C95A65F00F0DEA6 /* NotificationsManager.swift */; };
+		10117C072D517585002898FB /* eg-oreo.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 10117C062D517585002898FB /* eg-oreo.ogg */; };
+		10117C1B2D517A18002898FB /* nk-cream.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 10117C1A2D517A18002898FB /* nk-cream.ogg */; };
 		10174E7F2C7B4AB700A6AEE6 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10174E7E2C7B4AB700A6AEE6 /* MenuBarView.swift */; };
 		10174E812C7BA50B00A6AEE6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10174E802C7BA50B00A6AEE6 /* SettingsView.swift */; };
 		10174E842C7BB00B00A6AEE6 /* SettingsToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10174E832C7BB00B00A6AEE6 /* SettingsToggle.swift */; };
@@ -28,8 +30,8 @@
 		10BAAC092C8C5FC20024E3E0 /* SettingsShortcutRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAAC082C8C5FC20024E3E0 /* SettingsShortcutRecorder.swift */; };
 		10D244392C87463E00D99C0C /* SettingsSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D244382C87463E00D99C0C /* SettingsSlider.swift */; };
 		10D2443B2C87515000D99C0C /* CustomVolumeIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2443A2C87515000D99C0C /* CustomVolumeIntent.swift */; };
+		10DEBF342D5130A100BE1720 /* nk-cream.json in Resources */ = {isa = PBXBuildFile; fileRef = 10DEBF332D5130A100BE1720 /* nk-cream.json */; };
 		10E356492C77D29100F15BA5 /* OggDecoder in Frameworks */ = {isa = PBXBuildFile; productRef = 10E356482C77D29100F15BA5 /* OggDecoder */; };
-		10E3564C2C789A3000F15BA5 /* eg-oreo.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 10E3564B2C789A3000F15BA5 /* eg-oreo.ogg */; };
 		10E3564E2C789A5F00F15BA5 /* eg-oreo.json in Resources */ = {isa = PBXBuildFile; fileRef = 10E3564D2C789A5F00F15BA5 /* eg-oreo.json */; };
 		10E356512C789DC000F15BA5 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 10E356502C789DC000F15BA5 /* Defaults */; };
 		10E356542C789E0800F15BA5 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E356532C789E0800F15BA5 /* Defaults.swift */; };
@@ -50,6 +52,8 @@
 		100D02F32C7A8B30006A5C1B /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		100D02F52C7A8BCA006A5C1B /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		100E085E2C95A65F00F0DEA6 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
+		10117C062D517585002898FB /* eg-oreo.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "eg-oreo.ogg"; sourceTree = "<group>"; };
+		10117C1A2D517A18002898FB /* nk-cream.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nk-cream.ogg"; sourceTree = "<group>"; };
 		10174E7E2C7B4AB700A6AEE6 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		10174E802C7BA50B00A6AEE6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		10174E832C7BB00B00A6AEE6 /* SettingsToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsToggle.swift; sourceTree = "<group>"; };
@@ -64,7 +68,7 @@
 		10BAAC082C8C5FC20024E3E0 /* SettingsShortcutRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsShortcutRecorder.swift; sourceTree = "<group>"; };
 		10D244382C87463E00D99C0C /* SettingsSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSlider.swift; sourceTree = "<group>"; };
 		10D2443A2C87515000D99C0C /* CustomVolumeIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVolumeIntent.swift; sourceTree = "<group>"; };
-		10E3564B2C789A3000F15BA5 /* eg-oreo.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "eg-oreo.ogg"; sourceTree = "<group>"; };
+		10DEBF332D5130A100BE1720 /* nk-cream.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "nk-cream.json"; sourceTree = "<group>"; };
 		10E3564D2C789A5F00F15BA5 /* eg-oreo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "eg-oreo.json"; sourceTree = "<group>"; };
 		10E356532C789E0800F15BA5 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		10FA0F1F2C7627D90056919B /* click.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = click.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,11 +154,20 @@
 			path = Intents;
 			sourceTree = "<group>";
 		};
+		10DEBF322D51309100BE1720 /* nk-cream */ = {
+			isa = PBXGroup;
+			children = (
+				10DEBF332D5130A100BE1720 /* nk-cream.json */,
+				10117C1A2D517A18002898FB /* nk-cream.ogg */,
+			);
+			path = "nk-cream";
+			sourceTree = "<group>";
+		};
 		10E3564A2C789A2600F15BA5 /* eg-oreo */ = {
 			isa = PBXGroup;
 			children = (
 				10E3564D2C789A5F00F15BA5 /* eg-oreo.json */,
-				10E3564B2C789A3000F15BA5 /* eg-oreo.ogg */,
+				10117C062D517585002898FB /* eg-oreo.ogg */,
 			);
 			path = "eg-oreo";
 			sourceTree = "<group>";
@@ -215,6 +228,7 @@
 		10FA0F372C7696D10056919B /* Soundpacks */ = {
 			isa = PBXGroup;
 			children = (
+				10DEBF322D51309100BE1720 /* nk-cream */,
 				10E3564A2C789A2600F15BA5 /* eg-oreo */,
 				10FB435F2C76A3D3000685E8 /* eg-crystal-purple */,
 			);
@@ -300,12 +314,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10E3564C2C789A3000F15BA5 /* eg-oreo.ogg in Resources */,
+				10117C072D517585002898FB /* eg-oreo.ogg in Resources */,
+				10117C1B2D517A18002898FB /* nk-cream.ogg in Resources */,
 				10FB43702C77309A000685E8 /* eg-crysyal-purple.ogg in Resources */,
 				10FA0F2A2C7627DA0056919B /* Preview Assets.xcassets in Resources */,
 				10FA0F272C7627DA0056919B /* Assets.xcassets in Resources */,
 				10E3564E2C789A5F00F15BA5 /* eg-oreo.json in Resources */,
 				10FB43602C76A3D3000685E8 /* eg-crysyal-purple.json in Resources */,
+				10DEBF342D5130A100BE1720 /* nk-cream.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

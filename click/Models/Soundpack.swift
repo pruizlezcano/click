@@ -26,6 +26,7 @@ struct SoundpackObject: Decodable {
 enum Soundpack: String, CaseIterable, Defaults.Serializable {
     case egCrystalPurple = "eg-crysyal-purple"
     case egOreo = "eg-oreo"
+    case nkCream = "nk-cream"
 
     var soundpack: SoundpackObject? {
         loadJSON(rawValue)
@@ -57,7 +58,8 @@ extension Soundpack: AppEnum {
     static var caseDisplayRepresentations: [Soundpack: DisplayRepresentation] {
         [
             .egCrystalPurple: DisplayRepresentation(stringLiteral: "EG Crystal Purple"),
-            .egOreo: DisplayRepresentation(stringLiteral: "EG Oreo")
+            .egOreo: DisplayRepresentation(stringLiteral: "EG Oreo"),
+            .nkCream: DisplayRepresentation(stringLiteral: "NK Cream")
         ]
     }
 }

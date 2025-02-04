@@ -1,6 +1,8 @@
 import argparse
 import json
 import os
+import subprocess
+import tempfile
 from pathlib import Path
 
 key_code_relation = {
@@ -126,6 +128,102 @@ key_code_relation = {
 }
 
 
+def create_combined_audio(input_dir: Path, audio_files: set, output_file: Path):
+    # Verify all audio files exist first
+    missing_files = []
+    for audio in audio_files:
+        if audio and not (input_dir / audio).exists():
+            missing_files.append(audio)
+
+    if missing_files:
+        raise FileNotFoundError(f"Missing audio files: {', '.join(missing_files)}")
+
+    # Dictionary to store audio durations and positions
+    audio_positions = {}
+    current_position = 0
+
+    with tempfile.TemporaryDirectory() as temp_dir:
+        temp_path = Path(temp_dir)
+        silence_duration = 0.1
+
+        # Get duration of each audio file and store positions
+        for audio in sorted(audio_files):  # Sort to ensure consistent order
+            if audio:
+                source_file = input_dir / audio
+                result = subprocess.run(
+                    [
+                        "ffprobe",
+                        "-v",
+                        "error",
+                        "-show_entries",
+                        "format=duration",
+                        "-of",
+                        "default=noprint_wrappers=1:nokey=1",
+                        str(source_file),
+                    ],
+                    capture_output=True,
+                    text=True,
+                )
+                duration = float(result.stdout.strip())
+                audio_positions[audio] = {
+                    "start": int(current_position * 1000),
+                    "length": int(duration * 1000),
+                }
+                current_position += duration + silence_duration
+
+        # Create a file list for ffmpeg
+        file_list = temp_path / "files.txt"
+        silence_file = temp_path / "silence.wav"
+
+        # Create a short silence file
+        subprocess.run(
+            [
+                "ffmpeg",
+                "-f",
+                "lavfi",
+                "-i",
+                "anullsrc=r=44100:cl=stereo",
+                "-t",
+                str(silence_duration),
+                "-q:a",
+                "0",
+                str(silence_file),
+            ],
+            check=True,
+        )
+
+        with file_list.open("w") as f:
+            for audio in sorted(audio_files):
+                if audio:  # Skip None values
+                    source_file = input_dir / audio
+                    f.write(f"file '{source_file.absolute()}'\n")
+                    f.write(f"file '{silence_file.absolute()}'\n")
+
+        # Use ffmpeg to concatenate all audio files
+        try:
+            subprocess.run(
+                [
+                    "ffmpeg",
+                    "-f",
+                    "concat",
+                    "-safe",
+                    "0",
+                    "-i",
+                    str(file_list),
+                    "-c:a",
+                    "libvorbis",
+                    "-f",
+                    "ogg",
+                    str(output_file),
+                ],
+                check=True,
+            )
+        except subprocess.CalledProcessError as e:
+            raise RuntimeError(f"Failed to combine audio files: {e}")
+
+    return audio_positions
+
+
 def convert_mechvibes(input_file: Path, output_file: Path):
     # check file exists
     if not os.path.exists(input_file):
@@ -143,6 +241,26 @@ def convert_mechvibes(input_file: Path, output_file: Path):
         for key in ["name", "key_define_type", "includes_numpad", "defines", "tags"]
     ):
         raise ValueError("Not a Mechvibes soundpack: Missing required keys.")
+
+    # Get the directory containing the input file
+    input_dir = input_file.parent
+
+    # If it's a multi-key soundpack, combine the audio files
+    if data.get("key_define_type") == "multi":
+        # Collect unique audio files
+        audio_files = {v for v in data["defines"].values() if v}
+
+        # Create the combined audio file
+        name, _ = os.path.splitext(output_file.name)
+        sound_file = output_file.parent / f"{name}.ogg"
+        audio_positions = create_combined_audio(input_dir, audio_files, sound_file)
+
+        # Update the configuration with start/end positions
+        for key in data["defines"]:
+            if data["defines"][key]:
+                audio_file = data["defines"][key]
+                positions = audio_positions[audio_file]
+                data["defines"][key] = [positions["start"], positions["length"]]
 
     # replace the keycodes
     new_defines = {}
