@@ -270,9 +270,13 @@ def convert_mechvibes(input_file: Path, output_file: Path):
             new_defines[new_keyCode] = sounds
 
     data["defines"] = new_defines
+    data["manufacturer"] = "Click"
     data.pop("id", None)
     data.pop("default", None)
     data.pop("sound", None)
+    data.pop("key_define_type", None)
+    data.pop("includes_numpad", None)
+    data.pop("tags", None)
 
     with open(output_file, "w") as file:
         json.dump(data, file, indent=2)

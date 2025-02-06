@@ -1,7 +1,6 @@
 {
-  "name": "EG Crystal Purple",
-  "key_define_type": "single",
-  "includes_numpad": false,
+  "name": "Crystal Purple",
+  "manufacturer": "Everglide",
   "defines": {
     "53": [
       1088,
@@ -418,7 +417,4 @@
       134
     ]
   },
-  "tags": [
-    "pre-installed"
-  ]
 }

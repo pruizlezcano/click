@@ -11,16 +11,8 @@ import Foundation
 
 struct SoundpackObject: Decodable {
     let name: String
-    let keyDefineType: String
-    let includesNumpad: Bool
+    let manufacturer: String
     let defines: [String: [Int]?]
-    let tags: [String]
-
-    enum CodingKeys: String, CodingKey {
-        case name, defines, tags
-        case keyDefineType = "key_define_type"
-        case includesNumpad = "includes_numpad"
-    }
 }
 
 enum Soundpack: String, CaseIterable, Defaults.Serializable {

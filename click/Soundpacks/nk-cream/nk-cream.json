@@ -1,7 +1,6 @@
 {
-  "name": "NK Cream",
-  "key_define_type": "multi",
-  "includes_numpad": false,
+  "name": "Cream",
+  "manufacturer": "NovelKeys",
   "defines": {
     "53": [
       6716,
@@ -417,8 +416,5 @@
       9446,
       193
     ]
-  },
-  "tags": [
-    "pre-installed"
-  ]
+  }
 }

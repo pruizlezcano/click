@@ -1,7 +1,6 @@
 {
-  "name": "EG Oreo",
-  "key_define_type": "single",
-  "includes_numpad": false,
+  "name": "Oreo",
+  "manufacturer": "Everglide",
   "defines": {
     "53": [
       971,
@@ -417,8 +416,5 @@
       24087,
       119
     ]
-  },
-  "tags": [
-    "pre-installed"
-  ]
+  }
 }
