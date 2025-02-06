@@ -28,6 +28,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             window.styleMask.insert(.borderless)
             window.isOpaque = false
             window.backgroundColor = .clear
+
+            window.styleMask.remove(.resizable)
+            window.setContentSize(NSSize(width: 650, height: 400))
+
             window.center()
             window.standardWindowButton(.miniaturizeButton)?.isHidden = true
             window.standardWindowButton(.zoomButton)?.isHidden = true

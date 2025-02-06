@@ -20,7 +20,6 @@ struct ClickApp: App {
         }
         .environmentObject(appState)
         .windowStyle(.hiddenTitleBar)
-        .windowResizability(.contentSize)
 
         MenuBarExtra {
             MenuBarView()
