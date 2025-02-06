@@ -31,6 +31,11 @@ struct PermissionsView: View {
                         .foregroundStyle(.secondary)
                     Text("Open System Preferences")
                         .font(.title3.bold())
+                    Button(action: openSystemSettings) {
+                        Image(systemName: "arrow.up.forward.app.fill")
+                            .foregroundStyle(.secondary)
+                    }
+                    .buttonStyle(.plain)
                 }
                 .padding(1)
                 HStack {
@@ -58,6 +63,12 @@ struct PermissionsView: View {
             .padding()
 
             Spacer()
+        }
+    }
+
+    func openSystemSettings() {
+        if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility") {
+            NSWorkspace.shared.open(url)
         }
     }
 }
