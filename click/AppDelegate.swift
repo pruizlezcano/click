@@ -16,7 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let visualEffect = NSVisualEffectView()
             visualEffect.blendingMode = .behindWindow
             visualEffect.state = .active
-            visualEffect.material = .hudWindow
+            visualEffect.material = .sidebar
 
             // Set the contentView of the visual effect view to the SwiftUI view
             visualEffect.translatesAutoresizingMaskIntoConstraints = false
@@ -33,8 +33,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             window.setContentSize(NSSize(width: 650, height: 400))
 
             window.center()
-            window.standardWindowButton(.miniaturizeButton)?.isHidden = true
-            window.standardWindowButton(.zoomButton)?.isHidden = true
             window.makeKeyAndOrderFront(nil)
         }
     }
