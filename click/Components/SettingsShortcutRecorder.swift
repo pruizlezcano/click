@@ -15,7 +15,7 @@ struct SettingsShortcutRecorder: View {
     let title: LocalizedStringKey
     let name: KeyboardShortcuts.Name
 
-    public init(
+    init(
         _ title: LocalizedStringKey,
         name: KeyboardShortcuts.Name
     ) {
@@ -23,7 +23,7 @@ struct SettingsShortcutRecorder: View {
         self.name = name
     }
 
-    public var body: some View {
+    var body: some View {
         HStack {
             HStack(spacing: 0) {
                 Text(title)

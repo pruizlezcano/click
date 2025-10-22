@@ -20,7 +20,7 @@ struct SettingsSlider: View {
     let leftIcon: String?
     let rightIcon: String?
 
-    public init(
+    init(
         _ title: LocalizedStringKey,
         value: Binding<Float>,
         disabled: Bool = false,
@@ -38,7 +38,7 @@ struct SettingsSlider: View {
         self.rightIcon = rightIcon
     }
 
-    public var body: some View {
+    var body: some View {
         HStack {
             HStack(spacing: 0) {
                 Text(title)

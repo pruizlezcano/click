@@ -16,7 +16,7 @@ struct SettingsToggle: View {
 
     let disabled: Bool
 
-    public init(
+    init(
         _ title: LocalizedStringKey,
         isOn value: Binding<Bool>,
         disabled: Bool = false
@@ -26,7 +26,7 @@ struct SettingsToggle: View {
         self.disabled = disabled
     }
 
-    public var body: some View {
+    var body: some View {
         HStack {
             HStack(spacing: 0) {
                 Text(title)
