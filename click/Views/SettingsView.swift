@@ -16,6 +16,14 @@ struct SettingsView: View {
     @Default(.customVolume) var customVolume
     @Default(.showNotifications) var showNotifications
 
+    private var cornerRadius: CGFloat {
+        if #available(macOS 26, *) {
+            10
+        } else {
+            5
+        }
+    }
+
     var body: some View {
         TabView {
             generalSettings()
@@ -37,18 +45,18 @@ struct SettingsView: View {
                     .padding(.horizontal, 8)
                 SettingsToggle("Start Minimized", isOn: $startMinimized)
             }
-            .clipShape(.rect(cornerRadius: 5))
+            .clipShape(.rect(cornerRadius: cornerRadius))
             .overlay {
-                RoundedRectangle(cornerRadius: 5)
+                RoundedRectangle(cornerRadius: cornerRadius)
                     .strokeBorder(.quaternary, lineWidth: 1)
             }
 
             VStack(spacing: 0) {
                 SettingsToggle("Notifications", isOn: $showNotifications)
             }
-            .clipShape(.rect(cornerRadius: 5))
+            .clipShape(.rect(cornerRadius: cornerRadius))
             .overlay {
-                RoundedRectangle(cornerRadius: 5)
+                RoundedRectangle(cornerRadius: cornerRadius)
                     .strokeBorder(.quaternary, lineWidth: 1)
             }
         }
@@ -102,9 +110,14 @@ struct SettingsView: View {
                 .padding(.horizontal, 8)
                 .frame(minHeight: 34)
             }
-            .clipShape(.rect(cornerRadius: 5))
+            .clipShape(.rect(cornerRadius: 10))
             .overlay {
-                RoundedRectangle(cornerRadius: 5)
+                RoundedRectangle(cornerRadius: 10)
+                    .strokeBorder(.quaternary, lineWidth: 1)
+            }
+            .clipShape(.rect(cornerRadius: cornerRadius))
+            .overlay {
+                RoundedRectangle(cornerRadius: cornerRadius)
                     .strokeBorder(.quaternary, lineWidth: 1)
             }
         }
@@ -124,6 +137,11 @@ struct SettingsView: View {
             .clipShape(.rect(cornerRadius: 5))
             .overlay {
                 RoundedRectangle(cornerRadius: 5)
+                    .strokeBorder(.quaternary, lineWidth: 1)
+            }
+            .clipShape(.rect(cornerRadius: cornerRadius))
+            .overlay {
+                RoundedRectangle(cornerRadius: cornerRadius)
                     .strokeBorder(.quaternary, lineWidth: 1)
             }
         }
