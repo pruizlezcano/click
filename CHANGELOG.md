@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/pruizlezcano/click/compare/v1.1.0...v1.2.0) (2025-10-23)
+
+
+### Features
+
+* **assets:** update app icon assets with new versions ([5ab8781](https://github.com/pruizlezcano/click/commit/5ab87814d53a7db5bd2ec6ba13f1f01f70bbff84))
+* **ui:** adjust corner radius based on macOS version ([4eca9dd](https://github.com/pruizlezcano/click/commit/4eca9ddf223f26e9df88773a93fd7f120b1762ec))
+
+### Build
+
+* **deps:** update Defaults and add swift-syntax dependencies ([143d404](https://github.com/pruizlezcano/click/commit/143d404dda5c1ed4604a3ea6e789244f9a5611e5))
+
 ## [1.1.0](https://github.com/pruizlezcano/click/compare/v1.0.0...v1.1.0) (2025-02-12)
 
 
